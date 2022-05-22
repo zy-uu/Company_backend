@@ -118,7 +118,7 @@ export default {
   },
   mounted() {
       this.message = "";
-      this.getTutorial(this.$$route.params.id);
+      this.getTutorial(this.$route.params.id);
   }
 };
 </script>

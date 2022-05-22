@@ -53,6 +53,7 @@
         </div>
 
         <router-link
+        style="color: blue"
           :to="'/tutorials/' + currentTutorial.id"
           class="badge badge-warning"
           >Edit</router-link
@@ -77,6 +78,9 @@ export default {
       currentIndex: -1,
       title: "",
     };
+  },
+  mounted() {
+    this.retrieveTutorials();
   },
   methods: {
     searchTitle() {
@@ -112,7 +116,7 @@ export default {
     removeAllTutorials() {
       TutorialDataService.deleteAll()
         .then((res) => {
-          refreshList()
+          this.refreshList()
           console.log(res);
         })
         .catch((err) => {
