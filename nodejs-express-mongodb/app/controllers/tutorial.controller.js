@@ -25,6 +25,7 @@ exports.create = function (req,res) {
 exports.findAll = function (req,res) {
     const title = req.query.title;
     //! ???
+    //* This can use for getting all data or searching for the title 
     var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
     Tutorial.find(condition)
     .then(data => {
